@@ -6,14 +6,16 @@ La aplicación fue creada con NodeJS, MySQL y Angular.
 
 ## Inicio 
 COMO CORRER EL PROYECTO
-Para poder poner en funcionamiento la aplicación, hay que instalar los **módulos**, tanto en el frontend como en el backend. En el backend hay que crear dos archivos en la carpeta "keys": el "private.pem" y el "public.pem". A cada uno hay que pegarle la clave privada y pública respectivamente, esto es para que funcione la utilización de jsonwebtoken. A la vez, hay que crear un archivo **.env** que contenga las siguientes variables:
+Para poder poner en funcionamiento la aplicación, hay que instalar los **módulos**, tanto en el frontend como en el backend. A la vez en el backend, hay que crear un archivo **.env** (a la altura del index.js) que contenga las siguientes variables:
 
 ```
+Servidor
 SERVER_HOST = ""
 SERVER_PORT = ""
 ```
 
 ```
+Base de datos
 DB_HOST = ""
 DB_PASS = ""
 DB_USER = ""
@@ -22,8 +24,9 @@ DB_NAME = "test"
 ```
 
 ```
+Envío de correo electrónico
 MAIL_HOST = ""
-MAIL_PORT = ""
+MAIL_PORT = 
 MAIL_USER = ""
 MAIL_PASS = ""
 ```
