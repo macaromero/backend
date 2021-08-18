@@ -82,8 +82,6 @@ const singleOrderDetail = async (req, res) => {
 const create = async (req, res) => {
     const carrito = req.body;
     const usuario = req.id;
-    console.log(carrito)
-    console.log(usuario)
 
     try {
         const orden = await model.createOrder(usuario);
