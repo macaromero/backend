@@ -1,0 +1,25 @@
+{
+  "name": "tpfinalromeromacarena",
+  "version": "1.0.0",
+  "description": "Proyecto final de la Diplomatura de Programación Web Full Stack de la UTN.",
+  "main": "index.js",
+  "scripts": {
+    "docs": "jsdoc -c jsdoc.json"
+  },
+  "author": "Macarena Romero",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsdoc": "^3.6.7",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.6.2",
+    "sha1": "^1.1.1",
+    "util": "^0.12.4",
+    "uuid": "^8.3.2"
+  }
+}

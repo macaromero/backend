@@ -1,0 +1,17 @@
+{
+    "plugins": [],
+    "source": {
+        "include": ["class", "controllers", "services"],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules/docs)"
+    },
+    "templates":{
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "destination": "./doc",
+        "recurse":"true",
+        "tutorials": "./tutorials"
+    }
+}

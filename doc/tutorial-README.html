@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Tutorial: README</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Tutorial: README</h1>
+
+    <section>
+
+<header>
+    
+
+    <h2>README</h2>
+</header>
+
+<article>
+    <h1>Clases de yoga 🧎🏽‍♀️</h1>
+<h2>Introducción</h2>
+<p>Esta aplicación es un sitio web destinado a una profesora que da clases de yoga, tanto virtuales como presenciales. Hay dos formas de ingreso, como usuario y como administrador. El usuario sería el alumno, este puede registrarse, loguearse, editar su perfil, inscribirse en clases y pagarlas. El administrador sería la profesora, también puede loguearse y editar su perfil, a la vez, puede crear nuevos precios, nuevas clases con distintos horarios, y ver todos los usuarios que hay inscriptos en cada clase.
+La aplicación fue creada con NodeJS, MySQL y Angular.</p>
+<h2>Inicio</h2>
+<p>COMO CORRER EL PROYECTO
+Para poder poner en funcionamiento la aplicación, hay que instalar los <strong>módulos</strong>, tanto en el frontend como en el backend. En el backend hay que crear dos archivos en la carpeta &quot;keys&quot;: el &quot;private.pem&quot; y el &quot;public.pem&quot;. A cada uno hay que pegarle la clave privada y pública respectivamente, esto es para que funcione la utilización de jsonwebtoken. A la vez, hay que crear un archivo <strong>.env</strong> que contenga las siguientes variables:</p>
+<pre class="prettyprint source"><code>SERVER_HOST = &quot;&quot;
+SERVER_PORT = &quot;&quot;
+</code></pre>
+<pre class="prettyprint source"><code>DB_HOST = &quot;&quot;
+DB_PASS = &quot;&quot;
+DB_USER = &quot;&quot;
+DB_PORT = 
+DB_NAME = &quot;test&quot;
+</code></pre>
+<pre class="prettyprint source"><code>MAIL_HOST = &quot;&quot;
+MAIL_PORT = &quot;&quot;
+MAIL_USER = &quot;&quot;
+MAIL_PASS = &quot;&quot;
+</code></pre>
+<h2>GIT</h2>
+<p>URL GIT</p>
+<h2>Endpoints</h2>
+<h3>Usuario</h3>
+<p>Se pueden crear nuevos usuarios y loguearse una vez que el registro esté confirmado.</p>
+<h5>Creación de nuevo usuario</h5>
+<p>Se realiza la petición a través del endpoint http://localhost:4200/registro, al que se llega clickeando en el ícono de usuario, y en la opción <strong>Registrate</strong>.
+Una vez que la petición es exitosa, el usuario recibirá un correo con una URL dinámica, a la que tendrá que acceder para poder confirmar su registro.</p>
+<h5>Login de un usuario</h5>
+<p>Una vez que el registro se confirmó, se tiene que realizar una petición a través del endpoint http://localhost:4200/login, al que se llega clickeando en el ícono de usuario, y en la opción <strong>Iniciá sesión</strong>.
+Si la petición es exitosa, el servidor le permitirá el acceso a la aplicación.</p>
+<h5>Inscripciones a clases</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/horarios, clickeando en la opción <strong>Horarios</strong>. Allí se pueden ver las clases que hay disponibles, y al clickear en las mismas, se irán sumando al carrito de compras. Una vez que el usuario terminó la selección, deberá clickear en el carrito, redirigiéndose al endpoint http://localhost:4200/user-cart. Allí podrá ver una tabla con las clases seleccionadas y podrá elegir si quiere pagar por una frecuencia diaria (una sola clase), o por una frecuencia mensual (un pack de 4 clases). Una vez que elije la frecuencia, deberá clickear en el botón <strong>Siguiente</strong> para poder avanzar. Se le abrirá la posibilidad de clickear en el número <strong>2</strong> del proceso, allí tendrá una nueva vista de las clases seleccionadas y un falso botón de pago, que al momento solamente realizará cambios en la base de datos. Para poder concluir el proceso, deberá clickear en <strong>Pagar</strong>. Luego, se le da la opción de ver las clases en las que está inscripto, a través del endpoint http://localhost:4200/user-inscripciones, allí podrá ver una tabla con las mismas.</p>
+<h5>Perfil</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/user/:id, al que se llega clickeando en el nombre del usuario, y en la opción <strong>Perfil</strong>, allí podrá encontrar todos sus datos de perfil y tendrá un botón para acceder al endpoint http://localhost:4200/user-update/:id, donde podrá modificar sus datos.</p>
+<h3>Administrador</h3>
+<h5>Login de un administrador</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/login, al que se llega clickeando en el botón localizado en el footer, debajo de la información de contacto, llamado <strong>Login administrador</strong>. Si la petición es exitosa, el servidor le permitirá el acceso a la aplicación.</p>
+<h5>Clases</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/admin-clases, clickeando la opción <strong>Clases</strong>. Allí se puede ver una tabla con todas las clases disponibles, y al clickear en el botón del ícono del lápiz, se puede acceder a cada clase y editarla. Al clickear en el botón del ícono del cesto de basura, se elimina la clase. Al clickear en el botón de <strong>Crear nueva clase</strong>, se accede al endpoint creado para dicho uso. Allí se puede crear una clase con un rango horario ya creado, o bien, crear un nuevo rango horario y luego crear la clase.</p>
+<h5>Inscriptos</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/admin-inscripciones, clickeando la opción <strong>Inscriptos</strong> en el menú desplegable de la izquierda. Allí se puede ver una tabla con todas las clases disponibles y los usuarios que están inscriptos en cada una de las mismas.</p>
+<h5>Precios</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/admin-precios, clickeando la opción <strong>Precios</strong> en el menú desplegable de la izquierda. Allí se puede ver una tabla con todos los precios disponibles, y al clickear en el botón del ícono del lápiz, se puede acceder a cada precio y editarlo. Al clickear en el botón del ícono del cesto de basura, se elimina dicho precio. Al clickear en el botón de <strong>Crear nuevo precio</strong>, se accede al endpoint creado para dicho uso. Allí se puede crear un precio definiendo la modalidad de la clase y la frecuencia también.</p>
+<h5>Perfil</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/admin-profile, al que se llega clickeando en el nombre del administrador, y en la opción <strong>Perfil</strong>, allí podrá encontrar todos sus datos de perfil y tendrá un botón para poder modificarlos.</p>
+<h3>Invitado</h3>
+<p>Corresponde a todo usuario que ingrese a la aplicación sin necesidad de loguearse.</p>
+<h5>Horarios</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/horarios, clickeando la opción <strong>Horarios</strong> en el menú desplegable de la izquierda. Allí se puede ver una tabla con todas las clases disponibles.</p>
+<h5>Precios</h5>
+<p>Se realiza una petición a través del endpoint http://localhost:4200/precios, clickeando la opción <strong>Precios</strong> en el menú desplegable de la izquierda. Allí se puede ver una tabla con todos precios disponibles de acuerdo a la modalidad de la clase.</p>
+<h3>Autoría ⚙</h3>
+<p>Macarena Romero para la Diplomatura de Programación Web Full Stack de la UTN.</p>
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Email.html">Email</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-README.html">README</a></li></ul><h3>Global</h3><ul><li><a href="global.html#confirmacionCorreo">confirmacionCorreo</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#registroFallido">registroFallido</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Aug 18 2021 12:06:46 GMT-0300 (hora estándar de Argentina)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
