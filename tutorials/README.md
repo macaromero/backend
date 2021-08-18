@@ -30,12 +30,14 @@ MAIL_USER = ""
 MAIL_PASS = ""
 ```
 
+
 ## GIT
 
 **Backend:**
 https://github.com/macaromero/backend.git
 **Frontend:**
 https://github.com/macaromero/frontend.git
+
 
 ## Endpoints
 
