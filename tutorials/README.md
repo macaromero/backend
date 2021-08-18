@@ -5,7 +5,6 @@ Esta aplicación es un sitio web destinado a una profesora que da clases de yoga
 La aplicación fue creada con NodeJS, MySQL y Angular.
 
 ## Inicio 
-COMO CORRER EL PROYECTO
 Para poder poner en funcionamiento la aplicación, hay que instalar los **módulos**, tanto en el frontend como en el backend. A la vez en el backend, hay que crear un archivo **.env** (a la altura del index.js) que contenga las siguientes variables:
 
 ```
@@ -32,7 +31,11 @@ MAIL_PASS = ""
 ```
 
 ## GIT
-URL GIT
+
+**Backend:**
+https://github.com/macaromero/backend.git
+**Frontend:**
+https://github.com/macaromero/frontend.git
 
 ## Endpoints
 
